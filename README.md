@@ -1,58 +1,159 @@
-FC 26 Auto Farm
+# ⚽ FC 26 Auto SBC Farm
 
-Automação desenvolvida em Python para executar tarefas repetitivas no FC 26 utilizando a biblioteca PyAutoGUI. O script simula cliques do mouse em posições específicas da tela para agilizar a execução de desafios de criação de elenco (DME/SBC), reduzindo a necessidade de interação manual.
+Automação desenvolvida em **Python** para agilizar tarefas repetitivas no **EA SPORTS FC 26**, utilizando a biblioteca **PyAutoGUI** para simular cliques do mouse.
 
-Aviso: Este projeto é apenas para fins de estudo e aprendizado em automação com Python.
+> **Projeto para fins educacionais**, demonstrando conceitos de automação de interface gráfica (GUI) com Python.
 
-Funcionalidades
-Acessa automaticamente o menu de Melhoria de Criação.
-Seleciona o filtro desejado.
-Habilita itens transferíveis.
-Constrói o desafio automaticamente.
-Troca os atletas utilizados.
-Resgata a recompensa.
-Repete todo o processo em loop.
-Tecnologias utilizadas
-Python 3
-PyAutoGUI
-Time
-Instalação
+---
+
+## 📌 Funcionalidades
+
+- ✅ Acessa automaticamente o menu de SBC (Melhoria de Criação).
+- ✅ Seleciona o AutoSBC.
+- ✅ Ativa a opção de itens transferíveis.
+- ✅ Constrói o SBC automaticamente.
+- ✅ Troca os atletas utilizados.
+- ✅ Resgata o pacote de recompensa.
+- ✅ Executa o processo em loop.
+
+Além disso, o projeto possui scripts auxiliares para localizar coordenadas do mouse e testar cliques antes da execução principal.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+FC26-Auto-Farm/
+│
+├── Farm_fifa.py        # Script principal da automação
+├── pegar_pick.py       # Captura a posição atual do mouse
+├── testas_pick.py      # Testa um clique em uma coordenada específica
+└── README.md
+```
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- Python 3
+- PyAutoGUI
+- Time
+
+---
+
+## 📦 Instalação
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/fc26-auto-farm.git
+```bash
+git clone https://github.com/SEU-USUARIO/fc26-auto-farm.git
+```
 
 Entre na pasta:
 
+```bash
 cd fc26-auto-farm
+```
 
-Instale a dependência:
+Instale as dependências:
 
+```bash
 pip install pyautogui
-Como usar
-Abra o FC 26.
-Configure a resolução utilizada durante a gravação das coordenadas.
-Posicione o jogo na tela.
+```
+
+---
+
+## ▶ Como utilizar
+
+### 1. Descobrir coordenadas
+
 Execute:
-python main.py
 
-O script iniciará automaticamente a sequência de cliques.
+```bash
+python pegar_pick.py
+```
 
-Estrutura
-📂 fc26-auto-farm
- ├── main.py
- ├── README.md
- └── requirements.txt
-Observações
-As coordenadas do mouse são fixas.
-Caso utilize outra resolução ou monitor, será necessário alterar os valores de x e y.
-Os tempos (sleep) podem precisar de ajustes dependendo do desempenho do computador.
-Dependências
-pyautogui
-Licença
+Após alguns segundos, posicione o mouse onde desejar.
 
-Este projeto é distribuído sob a licença MIT.
+O programa exibirá:
 
-Autor
+```
+Mouse position: x=000, y=000
+```
 
-Eduardo Montanha
+---
+
+### 2. Alterar as coordenadas
+
+Abra o arquivo **Farm_fifa.py** e substitua as coordenadas pelos valores do seu monitor.
+
+Exemplo:
+
+```python
+py.click(x=543, y=488)
+```
+
+---
+
+### 3. Executar a automação
+
+```bash
+python Farm_fifa.py
+```
+
+O script iniciará automaticamente o ciclo de criação do SBC.
+
+---
+
+## ⚠ Observações
+
+- O script depende da resolução da tela.
+- Não mova a janela do jogo durante a execução.
+- Caso utilize outro monitor ou resolução, será necessário recalibrar as coordenadas.
+- Os tempos (`sleep`) podem precisar de ajustes dependendo do desempenho do computador.
+
+---
+
+## 📄 Scripts
+
+### `Farm_fifa.py`
+
+Responsável por toda a automação do processo:
+
+- Abrir SBC
+- Selecionar AutoSBC
+- Construir
+- Trocar jogadores
+- Coletar recompensa
+- Repetir
+
+---
+
+### `pegar_pick.py`
+
+Ferramenta para descobrir rapidamente as coordenadas do mouse.
+
+---
+
+### `testas_pick.py`
+
+Realiza apenas um clique em uma posição específica para validar se a coordenada está correta.
+
+---
+
+## 🚀 Melhorias futuras
+
+- Interface gráfica (GUI)
+- Configuração automática das coordenadas
+- Atalho para iniciar e parar o script
+- Suporte a diferentes resoluções
+- Sistema de logs
+- Configuração via arquivo `.json`
+
+---
+
+## 👨‍💻 Autor
+
+**Eduardo Montanha**
+
+Desenvolvido para estudos de automação em Python utilizando PyAutoGUI.
